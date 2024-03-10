@@ -1,0 +1,151 @@
+:root {
+  --secondary-color-light: rgb(126, 126, 126);
+  --secondary-color-dark: rgb(187, 193, 198);
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: black;
+  color: aliceblue;
+}
+
+.dark-mode a {
+  color: #2eb7cf;
+}
+
+.dark-mode section h3 {
+  color: var(--secondary-color-dark);
+}
+
+.dark-mode header p {
+  color: var(--secondary-color-dark);
+}
+
+.dark-mode a:hover {
+  color: #b8467f;
+  border-bottom: 2px solid #4a4a4a;
+}
+
+/* Light Mode */
+
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: aliceblue;
+  transition: background-color 0.5s ease;
+}
+
+body a {
+  border-bottom: 2px dotted #4a4a4a;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+header img {
+  font-size: 4rem;
+  margin: 4rem 1rem 0 0;
+}
+
+header h1 {
+  margin-bottom: 0.625rem;
+}
+
+header p {
+  font-size: x-large;
+  color: var(--secondary-color-light);
+}
+
+header .icon {
+  cursor: pointer;
+}
+
+#themeToggleButton {
+  background: none;
+  border: none;
+  padding: 0;
+  width: 36px;
+  height: 36px;
+}
+
+section {
+  margin: 50px 0 50px 0;
+}
+
+section h2 {
+  margin-bottom: 1rem;
+}
+
+section h3 {
+  margin-top: 2rem;
+  color: var(--secondary-color-light);
+}
+
+#about {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#about h2 {
+  margin-top: 0;
+}
+
+#about .text {
+  margin-bottom: 2rem;
+}
+
+#about .sub-text {
+  margin: 0;
+}
+
+section img {
+  width: 13vw;
+  height: 13vw;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px 10px 5px;
+  margin-top: auto;
+}
+
+footer #social-media {
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: medium;
+  }
+
+  section {
+    margin: 0;
+  }
+
+  #about {
+    flex-direction: column;
+    align-items: start;
+    gap: 0;
+  }
+
+  section img {
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    background-size: cover;
+  }
+}
