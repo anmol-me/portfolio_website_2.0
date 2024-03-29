@@ -50,6 +50,11 @@ header {
   align-items: start;
 }
 
+header nav {
+  display: flex;
+  gap: 10px;
+}
+
 header img {
   font-size: 4rem;
   margin: 4rem 1rem 0 0;
