@@ -126,8 +126,8 @@ section h3 {
 }
 
 section img {
-  width: 13vw;
-  height: 13vw;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   background-size: cover;
 }
@@ -140,6 +140,7 @@ footer {
   margin-top: auto;
 }
 
+/* Mobile View */
 @media only screen and (max-width: 768px) {
   body {
     font-size: medium;
