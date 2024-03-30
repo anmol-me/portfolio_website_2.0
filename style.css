@@ -140,10 +140,6 @@ footer {
   margin-top: auto;
 }
 
-footer #social-media {
-  text-transform: uppercase;
-}
-
 @media only screen and (max-width: 768px) {
   body {
     font-size: medium;
