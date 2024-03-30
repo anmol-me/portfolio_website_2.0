@@ -38,6 +38,7 @@ body {
 body {
   background-color: aliceblue;
   transition: background-color 0.5s ease;
+  min-width: 684px;
 }
 
 body a {
@@ -146,6 +147,7 @@ footer #social-media {
 @media only screen and (max-width: 768px) {
   body {
     font-size: medium;
+    min-width: auto;
   }
 
   section {
