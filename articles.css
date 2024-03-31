@@ -1,5 +1,6 @@
 hr {
   border: 1px solid #c6c6c6;
+  margin-bottom: 13px;
 }
 
 ul li {
@@ -10,4 +11,8 @@ ul li small {
   display: block;
   margin-top: 0;
   color: var(--secondary-color-light);
+}
+
+main > h2 {
+  margin-bottom: 5px;
 }

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sakura.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="articles.css" type="text/css" />
+    <title>Anmol Singh | Articles</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Anmol Singh</h1>
+        <p>Web & Flutter Developer</p>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="articles.html">Articles</a>
+        <button id="themeToggleButton" aria-label="Toggle Dark Mode">
+          <img src="assets/icons/dark_mode.svg" class="icon" alt="Dark Mode" />
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <h2>How Flutter Programs Run Under the Hood: Simply Explained</h2>
+      <small><b>23 March 2024 • 4 min read</b></small>
+      <hr />
+      <p>
+        Flutter applications are built using the Dart programming language. Dart
+        is a free, open-source, object-oriented language developed by Google.
+        One of its key strengths is cross-platform development.
+      </p>
+      <p>
+        This means you can write code once and deploy it on various platforms
+        like mobile (Android, iOS), desktop (Windows, macOS, Linux), and even
+        the web — all with near-native performance. This is achieved by
+        compiling Dart code into machine code specific to the target platform.
+      </p>
+      <p>
+        Another key feature of Dart is its ability to make changes iteratively
+        and quickly which is done through the use of the hot-reload feature.
+        This feature allows you to see the result instantly in your running app.
+      </p>
+      <p>
+        The power of making changes on the fly is what we’ll be diving deep into
+        today. Let’s see how dart code is transitioned into an app in the first
+        place. But for that, we first need to understand a few terms.
+      </p>
+      <h5>1. Dart compiler:</h5>
+      <p>
+        The Dart compiler is a specific tool used to translate Dart code into
+        either machine code or bytecode. Bytecode is a low-level code that is
+        the result of the compilation(translation) of a source code which is
+        written in a high-level language (Dart). It is processed by a virtual
+        machine like Dart Virtual Machine (Dart VM) discussed below.
+      </p>
+      <h6>Types of Compilation:</h6>
+      <p>
+        <b>a) Ahead-of-Time (AOT) Compilation:</b> This process translates the
+        entire Dart codebase into machine code specific to the target platform
+        (like ARM for mobile devices). This is typically used for release builds
+        in Flutter to achieve potentially better performance and smaller app
+        size compared to JIT.
+      </p>
+      <p>
+        <b>b) Just-in-Time Compilation (JIT):</b> This is the primary technique
+        used by Dart VM for compiling dart code on the fly. It translates small
+        chunks of Dart code into bytecode (an intermediate representation of
+        code) just before they are needed for execution by Dart VM. This
+        approach allows for faster development cycles with features like hot
+        reload in Flutter.
+      </p>
+      <p>
+        <b>c) Dart to JavaScript Compilation:</b> The Dart compiler,
+        specifically dart2js, is used to translate Dart code into a combination
+        of JavaScript and WebAssembly for web development.
+      </p>
+      <p>
+        Flutter provides three main build modes that determine how the Dart code
+        is compiled and optimized for different purposes:
+      </p>
+      <h6>Debug Mode:</h6>
+      <ul>
+        <li>
+          <b>JIT Compilation:</b> The Dart code is translated into bytecode on
+          the fly for hot reload functionality.
+        </li>
+        <li><b>Focus:</b> Fast development cycles with rapid code updates.</li>
+      </ul>
+      <h6>Profile Mode:</h6>
+      <ul>
+        <li>
+          <b>Similar to Debug Mode:</b> Uses JIT compilation for profiling
+          purposes.
+        </li>
+        <li>
+          <b>Focus:</b> Gathering detailed performance data to identify
+          bottlenecks.
+        </li>
+      </ul>
+      <h6>Release Mode:</h6>
+      <ul>
+        <li>
+          <b>Optional AOT Compilation:</b> The entire Dart codebase is
+          translated into machine code specific to the target platform (ARM,
+          x64).
+        </li>
+        <li>
+          <b>Focus:</b> Smaller app size and potentially improved performance
+          for production apps.
+        </li>
+        <li><b>No Debugging Information:</b> Removed to reduce app size.</li>
+      </ul>
+      <h5>2. Dart Virtual Machine:</h5>
+      <p>
+        The Dart VM is the primary execution engine or interpreter for Dart
+        code. It’s not a physical machine but a software layer that provides an
+        environment for Dart programs to run. It acts as an intermediary between
+        your Dart code and the underlying hardware (processor, memory) of your
+        device. The Dart VM mainly uses Just-in-Time Compilation (JIT) for code
+        execution.
+      </p>
+      <p>Some of the other responsibilities of Dart VM include:</p>
+      <ul>
+        <li>
+          allocating and deallocating memory as needed by the running Dart
+          program.
+        </li>
+        <li>
+          automatically reclaiming memory that is no longer being used by the
+          program.
+        </li>
+        <li>
+          enforcing security measures to prevent malicious code from accessing
+          unauthorized resources.
+        </li>
+      </ul>
+      <p>
+        It is possible for hot reload to work because of JIT. It is so because
+        the Dart VM can efficiently update only the modified parts of the code
+        with the newly JIT-compiled bytecode. This allows the app to reflect the
+        changes almost instantly without a full restart.
+      </p>
+      <p>
+        For AOT compilation, especially in release builds, a common approach is
+        hot restart. This involves restarting the entire app with the newly
+        compiled machine code after code changes are made. While not as
+        instantaneous as hot reload with JIT, hot restart provides a way to test
+        changes in a more optimised environment (AOT) without requiring a full
+        app rebuild from scratch.
+      </p>
+      <p>
+        Now let’s see how it works practically. When you write Dart code and run
+        it, several processes occur depending on the development stage and
+        compilation mode you’re using. Here’s a breakdown of the major phases:
+      </p>
+      <p><b>1. Development Time:</b></p>
+      <ul>
+        <li>Project Setup/Initialization</li>
+        <li>Writing Dart code using an IDE or code editor</li>
+        <li>Code Analysis</li>
+        <li>Testing (writing and running unit, widget, integration tests)</li>
+      </ul>
+      <p><b>2. Compile Time:</b></p>
+      <ul>
+        <li>Dependency Resolution</li>
+        <li>
+          Build Process (including code generation, asset bundling, invoking
+          Dart compiler — AOT or JIT)
+        </li>
+        <li>
+          The build process can happen through 3 modes: Debug mode, profile mode
+          & Release mode.
+        </li>
+      </ul>
+      <p><b>3. Runtime:</b></p>
+      <ul>
+        <li>Device/Emulator Deployment</li>
+        <li>Hot Reload (executing already-compiled bytecode with Dart VM)</li>
+        <li>
+          AOT Compilation (executing machine code directly on the processor)
+        </li>
+      </ul>
+      <h5>Conclusion</h5>
+      <p>
+        Flutter’s ability to run programs efficiently across multiple platforms
+        is a testament to the powerful combination of the Dart programming
+        language, the Dart compiler, and the Dart Virtual Machine. The seamless
+        integration of Just-in-Time (JIT) compilation for rapid development
+        cycles and hot reload, along with the option for Ahead-of-Time (AOT)
+        compilation for optimized performance and smaller app sizes, caters to
+        the diverse needs of developers throughout the app development
+        lifecycle.
+      </p>
+    </main>
+
+    <footer>
+      <time id="year"> </time>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
