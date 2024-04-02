@@ -7,21 +7,8 @@ ul li {
   margin-bottom: 1px;
 }
 
-ul li small {
+.article-sub-heading {
   display: block;
   margin-top: 0;
   color: var(--secondary-color-light);
-}
-
-main > h2 {
-  margin-bottom: 5px;
-}
-
-.date-readtime {
-  font-weight: bold;
-}
-
-.article-header-image {
-  display: flex;
-  justify-content: center;
 }

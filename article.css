@@ -1,0 +1,17 @@
+hr {
+  border: 1px solid #c6c6c6;
+  margin-bottom: 13px;
+}
+
+.article-heading {
+  margin-bottom: 5px;
+}
+
+.date-readtime {
+  font-weight: bold;
+}
+
+.article-header-image {
+  display: flex;
+  justify-content: center;
+}
