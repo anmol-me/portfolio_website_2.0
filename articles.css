@@ -16,3 +16,12 @@ ul li small {
 main > h2 {
   margin-bottom: 5px;
 }
+
+.date-readtime {
+  font-weight: bold;
+}
+
+.article-header-image {
+  display: flex;
+  justify-content: center;
+}

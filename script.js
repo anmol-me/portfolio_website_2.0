@@ -38,4 +38,17 @@ function updateCopyrightYear() {
   yearElement.textContent = `© ${year}`;
 }
 
+const setArticleDate = () => {
+  const headerDate = document.querySelector(".header-date");
+  const dateString = headerDate.dataset.date;
+  const date = new Date(dateString);
+  const formattedDate = date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+  headerDate.textContent = formattedDate;
+};
+
 updateCopyrightYear();
+setArticleDate();
