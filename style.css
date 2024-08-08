@@ -114,7 +114,7 @@ section h3 {
 }
 
 #about .sub-text {
-  margin: 0;
+  margin: 0 0 5px 0;
 }
 
 #about nav {
